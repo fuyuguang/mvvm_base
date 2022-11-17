@@ -79,7 +79,8 @@ dependencies {
     androidTestImplementation rootProject.ext.dependencies["espresso-core"]
 
 
-    api 'com.github.fuyuguang:retrofitNetwork:release_0.9.2'
+//    api 'com.github.fuyuguang:retrofitNetwork:release_0.9.2'
+    api 'com.github.fuyuguang:retrofitNetwork:release_0.9.4.3'
 //    api project(':lib_network')
 
 
