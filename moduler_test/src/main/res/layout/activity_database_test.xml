@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/mCollectManagerLinear"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="vertical"
+            >
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:id="@+id/mAddText"
+                    style="@style/textview_14"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dip"
+                    android:layout_marginTop="10dip"
+                    android:layout_marginBottom="10dip"
+                    android:layout_weight="1"
+                    android:gravity="center" />
+
+                <TextView
+                    android:id="@+id/mAddBtn"
+                    style="@style/textview_14"
+                    android:layout_width="match_parent"
+                    android:background="@color/purple_500"
+                    android:layout_height="50dip"
+                    android:layout_marginTop="10dip"
+                    android:layout_marginBottom="10dip"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="添加数据"
+                     />
+
+
+
+            </LinearLayout>
+
+
+
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:id="@+id/mDeleteText"
+                    style="@style/textview_14"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dip"
+                    android:layout_marginTop="10dip"
+                    android:layout_marginBottom="10dip"
+                    android:layout_weight="1"
+                    android:gravity="center" />
+
+                <TextView
+                    android:id="@+id/mDeleteBtnByID"
+                    style="@style/textview_14"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dip"
+                    android:background="@color/purple_500"
+                    android:gravity="center"
+                    android:layout_weight="1"
+                    android:layout_marginTop="10dip"
+                    android:layout_marginBottom="10dip"
+                    android:text="删除数据by id"
+                    />
+
+                <TextView
+                    android:id="@+id/mDeleteBtnByBean"
+                    style="@style/textview_14"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dip"
+                    android:gravity="center"
+                    android:layout_weight="1"
+                    android:layout_marginLeft="5dip"
+                    android:layout_marginTop="10dip"
+                    android:layout_marginBottom="10dip"
+                    android:text="删除数据by bean"
+                    android:background="@color/purple_500"
+                    />
+
+
+            </LinearLayout>
+
+
+
+
+
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:id="@+id/mUpdateText"
+                    style="@style/textview_14"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dip"
+                    android:layout_marginTop="10dip"
+                    android:layout_marginBottom="10dip"
+                    android:layout_weight="1"
+                    android:gravity="center" />
+
+                <TextView
+                    android:background="@color/purple_500"
+                    android:id="@+id/mUpdateBtm"
+                    style="@style/textview_14"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dip"
+                    android:layout_marginTop="10dip"
+                    android:layout_weight="1"
+                    android:layout_marginBottom="10dip"
+                    android:gravity="center"
+                    android:text="更新数据"
+                    />
+
+            </LinearLayout>
+
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:id="@+id/mQueryText"
+                    style="@style/textview_14"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dip"
+                    android:layout_marginTop="10dip"
+                    android:layout_marginBottom="10dip"
+                    android:layout_weight="1"
+                    android:gravity="center" />
+
+                <TextView
+                    android:id="@+id/mQueryBtn"
+                    style="@style/textview_14"
+                    android:layout_width="match_parent"
+                    android:background="@color/purple_500"
+                    android:layout_height="50dip"
+                    android:layout_marginTop="10dip"
+                    android:layout_weight="1"
+                    android:layout_marginBottom="10dip"
+                    android:gravity="center"
+                    android:text="查询单条数据"
+                    />
+
+            </LinearLayout>
+
+
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:id="@+id/mQueryAllText"
+                    style="@style/textview_14"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dip"
+                    android:layout_marginTop="10dip"
+                    android:layout_marginBottom="10dip"
+                    android:layout_weight="1"
+                    android:gravity="center" />
+
+                <TextView
+                    android:id="@+id/mQueryAllBtn"
+                    style="@style/textview_14"
+                    android:layout_weight="1"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dip"
+                    android:layout_marginTop="10dip"
+                    android:background="@color/purple_500"
+                    android:layout_marginBottom="10dip"
+                    android:gravity="center"
+                    android:text="Flow查All数据"
+                    />
+
+                <TextView
+                    android:id="@+id/mQueryAllBtnWithLiveData"
+                    style="@style/textview_14"
+                    android:layout_weight="1"
+                    android:layout_width="match_parent"
+                    android:layout_marginLeft="10dip"
+                    android:layout_height="50dip"
+                    android:layout_marginTop="10dip"
+                    android:layout_marginBottom="10dip"
+                    android:gravity="center"
+                    android:background="@color/purple_500"
+                    android:text="LiveData查All数据"
+                    />
+
+            </LinearLayout>
+        </LinearLayout>
+
+
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/mFlowRecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="visible"
+            />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:paddingTop="15dip"
+            android:id="@+id/mLiveDataRecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="visible"
+            />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:paddingTop="15dip"
+            android:id="@+id/mSingleRecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="visible"
+            />
+    </LinearLayout>
+</layout>
