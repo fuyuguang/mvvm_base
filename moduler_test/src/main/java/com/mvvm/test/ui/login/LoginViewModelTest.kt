@@ -7,10 +7,12 @@ import com.mvvm.baseapp.viewmodel.BaseViewModel
 import com.mvvm.test.net.model.PDAUserInfo
 import com.mvvm.test.net.model.ResponseSystemLoginLog
 import com.mvvm.test.net.model.WarehouseApi
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.flowOn
 import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.onEach
+import javax.inject.Inject
 
 /**
  * Created by fuyuguang on 2022/11/14 4:56 PM.
@@ -24,7 +26,8 @@ import kotlinx.coroutines.flow.onEach
     []()
 
  */
-class LoginViewModelTest : BaseViewModel<LoginDataSource>() {
+@HiltViewModel
+class LoginViewModelTest @Inject constructor(private val mDataSource : LoginDataSource): BaseViewModel<LoginDataSource>(mDataSource) {
 
 //    private val _text = MutableLiveData<CustomResource<ApiResponse<List<WarehouseApi>>>>()
 //    val text: MutableLiveData<CustomResource<ApiResponse<List<WarehouseApi>>>> = _text
@@ -60,24 +63,24 @@ class LoginViewModelTest : BaseViewModel<LoginDataSource>() {
         wareId: String = "84",
     ) {
 
-        mDataSource.checkAccountAndPwdApi2(userName,passWord,wareId){ it ->
-            it.parseResponseWithUiState(mUiStatus,{
-                this.let {
-                    var sss = it;
-                }
-            })
-
-        }
-
-        mDataSource.checkAccountAndPwdApi22(userName,passWord,wareId){ it ->
-            it.parseResponseWithUiState(mUiStatus,{
-
-                this.let {
-                    var sss = it;
-                }
-            })
-
-        }
+//        mDataSource.checkAccountAndPwdApi2(userName,passWord,wareId){ it ->
+//            it.parseResponseWithUiState(mUiStatus,{
+//                this.let {
+//                    var sss = it;
+//                }
+//            })
+//
+//        }
+//
+//        mDataSource.checkAccountAndPwdApi22(userName,passWord,wareId){ it ->
+//            it.parseResponseWithUiState(mUiStatus,{
+//
+//                this.let {
+//                    var sss = it;
+//                }
+//            })
+//
+//        }
 
         mDataSource.checkAccountAndPwdApi222(userName,passWord,wareId).onEach {
             it.parseResponseWithUiState(mUiStatus,{
@@ -88,11 +91,11 @@ class LoginViewModelTest : BaseViewModel<LoginDataSource>() {
             },{
 
             })
-        }.flowOn(Dispatchers.IO).launchIn(viewModelScope)
+        }.launchIn(viewModelScope)
 
-        mDataSource.checkAccountAndPwdApi2222<ResponseSystemLoginLog>(userName,passWord,wareId){
-
-        }
+//        mDataSource.checkAccountAndPwdApi2222<ResponseSystemLoginLog>(userName,passWord,wareId){
+//
+//        }
 
     }
 

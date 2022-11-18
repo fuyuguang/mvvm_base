@@ -1,6 +1,7 @@
 package com.mvvm.baseapp.viewmodel
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
+import androidx.room.CoroutinesRoom.Companion.createFlow
 import com.fyg.networklib.BaseResponse
 import com.fyg.networklib.model.bean.ApiResponse
 import com.fyg.networklib.result.BaseResource
@@ -12,6 +13,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.*
 import kotlinx.coroutines.launch
 import java.lang.reflect.ParameterizedType
+import javax.inject.Inject
 
 /**
  * 作者　: hegaojian
@@ -19,12 +21,15 @@ import java.lang.reflect.ParameterizedType
  * 描述　: ViewModel的基类 使用ViewModel类，放弃AndroidViewModel，原因：用处不大 完全有其他方式获取Application上下文
  */
 //open abstract class BaseViewModel(var dataSource : IDataSource) : ObservableViewModel() {
-open abstract class BaseViewModel<T : IDataSource> : ObservableViewModel() {
+open abstract class BaseViewModel<T : IDataSource> constructor(private val mDataSource : IDataSource) : ObservableViewModel() {
 
-     val mDataSource : T
+
+//    @Inject
+//    lateinit var mDataSource : IDataSource
+//    var mDataSource : T
 
     init {
-        mDataSource = createDataSource()
+//        mDataSource = createDataSource()
     }
 
     private fun createDataSource(): T {

@@ -1,6 +1,5 @@
 apply from: "config.gradle"
 
-
 buildscript {
 
     ext.jitpack_release_version = "1.0.0"
@@ -14,7 +13,9 @@ buildscript {
     ext.artifact_lib_provider_id = "lib_provider"
 
 
-
+    ext.hilt_version = '2.39'
+//    ext.hilt_version = '2.40'
+//    ext.hilt_version = '2.2.0'
     ext.kotlin_version = '1.6.10'
     ext.arouter_register_version = '1.0.2'
 
@@ -46,7 +47,11 @@ buildscript {
         classpath 'com.android.tools.build:gradle:4.2.2'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
         classpath 'com.github.dcendents:android-maven-gradle-plugin:2.1'
+
+        classpath "com.google.dagger:hilt-android-gradle-plugin:$hilt_version"
     }
+
+
 }
 
 allprojects {

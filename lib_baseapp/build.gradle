@@ -1,10 +1,11 @@
 //apply from: "config.gradle"
 
 plugins {
-//    id 'com.android.library'
-//    id 'org.jetbrains.kotlin.android'
-//    id 'kotlin-kapt'
+    id 'com.android.library'
+    id 'org.jetbrains.kotlin.android'
+    id 'kotlin-kapt'
     id 'maven-publish'
+    id 'dagger.hilt.android.plugin'
 }
 
 apply plugin: 'com.android.library'
@@ -128,6 +129,9 @@ dependencies {
     implementation rootProject.ext.dependencies["arouter-api"]
     kapt rootProject.ext.dependencies["arouter-compiler"]
 
+
+    implementation rootProject.ext.dependencies["hilt-android"]
+    kapt rootProject.ext.dependencies["hilt-compiler"]
 }
 
 

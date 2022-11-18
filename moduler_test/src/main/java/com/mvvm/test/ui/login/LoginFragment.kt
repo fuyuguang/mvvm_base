@@ -3,10 +3,14 @@ package com.mvvm.test.ui.login
 import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
+import androidx.fragment.app.activityViewModels
+import androidx.fragment.app.viewModels
 import com.mvvm.baseapp.ext.observerCustomResource
 import com.mvvm.test.databinding.FragmentLoginBinding
 import com.mvvm.test.ui.base.BaseDBFragment
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class LoginFragment : BaseDBFragment<LoginViewModelTest, FragmentLoginBinding>() {
 
     override fun initView(savedInstanceState: Bundle?) {
@@ -63,5 +67,9 @@ class LoginFragment : BaseDBFragment<LoginViewModelTest, FragmentLoginBinding>()
     override fun onDestroy() {
         super.onDestroy()
     }
+
+
+//    override val mViewModel by viewModels<LoginViewModelTest>()
+    override val mViewModel by activityViewModels<LoginViewModelTest>()
 
 }

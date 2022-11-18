@@ -8,9 +8,11 @@ import com.mvvm.baseapp.IDataSource
 
 import com.mvvm.baseapp.viewmodel.BaseViewModel
 import com.mvvm.test.WMSApp
+import com.mvvm.test.ui.login.LoginDataSource
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import java.util.*
+import javax.inject.Inject
 
 /**
  * Created by fuyuguang on 2022/7/20 11:11 上午.
@@ -21,7 +23,8 @@ import java.util.*
  * 类描述：
  * 备注：
  */
-class DataBaseTestViewModel : BaseViewModel<IDataSource>() {
+//class DataBaseTestViewModel : BaseViewModel<IDataSource>() {
+class DataBaseTestViewModel @Inject constructor(private val mDataSource : LoginDataSource): BaseViewModel<IDataSource>(mDataSource) {
 
 //    /** 酒仙后台数据格式  */
 ////    val mHomeRecommendLiveDataWithResource = MutableLiveData<Resource<ApiResponse<ApiHomePagerResponse<ArrayList<HomeWineList>>>>>()

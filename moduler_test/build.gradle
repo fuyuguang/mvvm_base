@@ -3,6 +3,7 @@ plugins {
     id 'org.jetbrains.kotlin.android'
     /** Unresolved reference: databinding  */
     id 'kotlin-kapt'
+    id 'dagger.hilt.android.plugin'
 }
 
 kapt {
@@ -102,4 +103,12 @@ dependencies {
     implementation rootProject.ext.dependencies["arouter-api"]
     kapt rootProject.ext.dependencies["arouter-compiler"]
 
+
+    implementation rootProject.ext.dependencies["hilt-android"]
+    kapt rootProject.ext.dependencies["hilt-compiler"]
+
+}
+
+kapt {
+    correctErrorTypes true
 }

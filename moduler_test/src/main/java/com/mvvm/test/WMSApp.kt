@@ -11,6 +11,7 @@ import com.fyg.networklib.NetWorkManager
 import com.fyg.networklib.model.bean.ApiResponse.Companion.isTokenDated
 import com.mvvm.WMSEnv
 import com.mvvm.test.net.ApiHomeService
+import dagger.hilt.android.HiltAndroidApp
 import kotlin.properties.Delegates
 
 /**
@@ -22,6 +23,7 @@ import kotlin.properties.Delegates
  * 类描述：
  * 备注：
  */
+@HiltAndroidApp
 class WMSApp : Application() {
 
 

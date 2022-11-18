@@ -35,7 +35,8 @@ abstract class BaseVmFragment<VM : BaseViewModel<*>> : Fragment() {
     //是否第一次加载
     private var isFirst: Boolean = true
 
-    lateinit var mViewModel: VM
+//    lateinit var mViewModel: VM
+    protected abstract val mViewModel: VM
 
     lateinit var mActivity: AppCompatActivity
 
@@ -60,7 +61,7 @@ abstract class BaseVmFragment<VM : BaseViewModel<*>> : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         isFirst = true
-        mViewModel = createViewModel()
+//        mViewModel = createViewModel()
         initView(savedInstanceState)
         createObserver()
         registorDefUIChange()

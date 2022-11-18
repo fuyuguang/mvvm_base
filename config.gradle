@@ -128,6 +128,8 @@ ext {
             "espresso-core"                               : "androidx.test.espresso:espresso-core:3.4.0",
 
 
+            "hilt-android"                               : "com.google.dagger:hilt-android:$hilt_version",
+            "hilt-compiler"                               : "com.google.dagger:hilt-compiler:$hilt_version",
 
 
     ]

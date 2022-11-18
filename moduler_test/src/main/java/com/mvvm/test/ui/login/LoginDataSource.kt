@@ -6,6 +6,7 @@ import com.fyg.networklib.model.bean.UserInfo
 import com.fyg.networklib.result.CustomResource
 import com.mvvm.baseapp.IDataSource
 import com.mvvm.comm.MD5
+import com.mvvm.test.net.ApiHomeService
 import com.mvvm.test.net.apiService
 import com.mvvm.test.net.model.PDAUserInfo
 import com.mvvm.test.net.model.RequestPDAUserInfo
@@ -14,6 +15,7 @@ import com.mvvm.test.net.model.WarehouseApi
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.*
 import kotlinx.coroutines.launch
+import javax.inject.Inject
 
 /**
  * Created by fuyuguang on 2022/11/10 9:41 PM.
@@ -24,8 +26,10 @@ import kotlinx.coroutines.launch
  * 类描述：
  * 备注：
  */
-class LoginDataSource : IDataSource() {
+class LoginDataSource @Inject constructor(): IDataSource() {
 
+    @Inject
+    lateinit var apiService: ApiHomeService
 
     fun getWarehouseApi(action: suspend (CustomResource<List<WarehouseApi>>) -> Unit) {
         mCoroutineScope.launch {
