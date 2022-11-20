@@ -16,4 +16,5 @@ include ':lib_provider'
 include ':lib_dialog'
 //include ':app'
 rootProject.name = "BaseApp"
+
 include ':app'
